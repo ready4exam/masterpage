@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<title>Ready4Exam — CBSE & State Board Academic Portal</title>
+<title>Ready4Exam — Board-Aligned Academic Portal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -35,6 +35,14 @@ body{
   background:#f8fafc;
   font-family:'Inter',sans-serif;
 }
+.glass-nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter:blur(16px);
+  background:rgba(19,59,106,.95);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
 .class-card{
   background:white;
   padding:1.8rem 1.4rem;
@@ -48,18 +56,23 @@ body{
   box-shadow:0 20px 40px rgba(19,59,106,.15);
   border-color:#133b6a;
 }
-.glass-nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  backdrop-filter:blur(16px);
-  background:rgba(19,59,106,.95);
-  border-bottom:1px solid rgba(255,255,255,0.1);
+.board-btn{
+  flex:1;
+  padding:.65rem 1.2rem;
+  border-radius:14px;
+  font-weight:800;
+  font-size:.85rem;
+  letter-spacing:.05em;
+  color:#475569;
+  background:#f1f5f9;
+  transition:.25s cubic-bezier(0.4,0,0.2,1);
 }
-.fade-in{
-  animation:fade .6s ease-out forwards;
-  opacity:0;
+.board-btn.active{
+  background:#133b6a;
+  color:white;
+  box-shadow:0 10px 25px rgba(19,59,106,.35);
 }
+.fade-in{animation:fade .6s ease-out forwards;opacity:0;}
 @keyframes fade{to{opacity:1}}
 </style>
 </head>
@@ -86,79 +99,91 @@ body{
 <main class="flex-grow w-full max-w-[1100px] mx-auto px-5 py-12 fade-in">
 
   <!-- HERO -->
-  <section class="hero bg-hero-grad text-white text-center rounded-[28px] px-6 py-14 mb-16 shadow-2xl">
+  <section class="bg-hero-grad text-white text-center rounded-[28px] px-6 py-14 mb-14 shadow-2xl">
     <span class="bg-gold/20 text-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-4">
       2025 – 2026 Academic Session
     </span>
+
     <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-5">
-      Choose Your Class
+      Board-Aligned Assessment & Mastery Platform for Classes 6–12
     </h2>
-    <p class="text-base md:text-xl max-w-2xl mx-auto opacity-90 font-medium leading-relaxed">
-      Board-aligned assessments, AI-powered practice, and structured mastery
-      for Classes 6 to 12.
+
+    <p class="text-base md:text-xl max-w-2xl mx-auto opacity-90 font-medium leading-relaxed mb-6">
+      Practice smarter, identify learning gaps early, and build exam-ready
+      confidence — chapter by chapter.
     </p>
+
+    <!-- Credibility Strip -->
+    <div class="flex flex-wrap justify-center gap-3 text-xs md:text-sm font-bold tracking-wide uppercase opacity-90">
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">CBSE</span>
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">SCERT</span>
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">ICSE</span>
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">NCERT-Aligned</span>
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">Competency-Based</span>
+      <span class="bg-white/10 px-3 py-1.5 rounded-full">NEP 2020</span>
+    </div>
+  </section>
+
+  <!-- BOARD SELECTOR -->
+  <section class="mb-14">
+    <div class="max-w-xl mx-auto text-center">
+      <p class="text-sm font-bold tracking-widest text-slate-500 uppercase mb-4">
+        Select Board
+      </p>
+      <div class="flex justify-center gap-3 bg-white p-2 rounded-2xl shadow-md border border-slate-200">
+        <button class="board-btn active" data-board="CBSE">CBSE</button>
+        <button class="board-btn" data-board="SCERT">SCERT</button>
+        <button class="board-btn" data-board="ICSE">ICSE</button>
+      </div>
+      <p id="board-note" class="mt-4 text-sm font-medium text-slate-500">
+        CBSE (NCERT) aligned curriculum with competency-based assessments
+      </p>
+    </div>
   </section>
 
   <!-- CLASS GRID -->
   <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Class Cards -->
     <a href="https://ready4exam.github.io/ready4exam-class-6/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 6</h3>
       <p class="text-slate-500 text-sm mb-6">Foundation & Concept Building</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 6
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 6</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-7/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 7</h3>
       <p class="text-slate-500 text-sm mb-6">Core Understanding & Practice</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 7
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 7</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-8/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 8</h3>
       <p class="text-slate-500 text-sm mb-6">Pre-Board Preparation</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 8
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 8</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-9/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 9</h3>
       <p class="text-slate-500 text-sm mb-6">Board Foundation</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 9
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 9</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-10/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 10</h3>
       <p class="text-slate-500 text-sm mb-6">Board Examination Year</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 10
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 10</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-11/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 11</h3>
       <p class="text-slate-500 text-sm mb-6">Stream Selection & Core Depth</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 11
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 11</button>
     </a>
 
     <a href="https://ready4exam.github.io/ready4exam-class-12/" class="class-card">
       <h3 class="text-xl font-black text-heading mb-1">Class 12</h3>
       <p class="text-slate-500 text-sm mb-6">Boards & Future Pathway</p>
-      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">
-        Open Class 12
-      </button>
+      <button class="w-full py-3 rounded-xl bg-cbse-blue text-white font-bold text-sm">Open Class 12</button>
     </a>
-
   </section>
 
 </main>
@@ -170,6 +195,23 @@ body{
 
 <script>
 lucide.createIcons();
+
+const boardNote = document.getElementById("board-note");
+const boardButtons = document.querySelectorAll(".board-btn");
+
+const boardText = {
+  CBSE: "CBSE (NCERT) aligned curriculum with competency-based assessments",
+  SCERT: "SCERT State Board syllabus aligned with classroom learning outcomes",
+  ICSE: "ICSE curriculum focused on analytical depth and conceptual clarity"
+};
+
+boardButtons.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    boardButtons.forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    boardNote.textContent = boardText[btn.dataset.board];
+  });
+});
 </script>
 
 </body>
