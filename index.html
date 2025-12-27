@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 <title>Ready4Exam — Board-Aligned Academic Portal</title>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4EFDM0CRYY"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -54,8 +54,14 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:all .2s ease-in-out;cursor:poin
   <p class="text-sm md:text-base opacity-90">Identify gaps early. Practice smart. Grow stronger.</p>
 </section>
 
+<section class="grid md:grid-cols-3 gap-4 mb-12 text-center">
+  <div class="card"><b>Learn</b><p class="text-xs mt-1 text-gray-500">Concept clarity</p></div>
+  <div class="card"><b>Practice</b><p class="text-xs mt-1 text-gray-500">Competency questions</p></div>
+  <div class="card"><b>Grow Stronger</b><p class="text-xs mt-1 text-gray-500">Exam readiness</p></div>
+</section>
+
 <section class="text-center mb-10">
-  <p class="uppercase text-xs font-bold mb-4 text-gray-500 tracking-widest">Select Your Board</p>
+  <p class="uppercase text-xs font-bold mb-4 text-gray-500 tracking-widest">Select Board</p>
   <div class="flex flex-wrap gap-3 justify-center">
     <button class="btn" data-board="CBSE">CBSE</button>
     <button class="btn" data-board="SCERT">SCERT</button>
@@ -63,20 +69,19 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:all .2s ease-in-out;cursor:poin
   </div>
 </section>
 
-<section id="content" class="hidden animate-in fade-in duration-500">
-  <div id="grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8"></div>
-  
+<section id="content" class="hidden">
+  <div id="grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"></div>
   <div id="coming" class="hidden text-center py-10">
-    <div class="inline-block p-6 bg-yellow-50 rounded-2xl border-2 border-dashed border-yellow-200">
-        <p class="text-xl font-bold text-yellow-700">ICSE Board</p>
-        <p class="text-sm text-yellow-600 uppercase font-black">Coming Soon</p>
+    <div class="inline-block p-6 bg-slate-100 rounded-2xl border-2 border-dashed border-slate-300 text-gray-500">
+        <p class="text-xl font-bold">ICSE Board</p>
+        <p class="text-sm uppercase font-black">Coming Soon</p>
     </div>
   </div>
 </section>
 
 </main>
 
-<footer class="bg-cbse text-white text-center py-4 text-xs opacity-90">
+<footer class="bg-cbse text-white text-center py-4 text-xs">
   ready4urexam@gmail.com | +91 85209 77573
 </footer>
 
@@ -86,24 +91,21 @@ const grid = document.getElementById("grid");
 const content = document.getElementById("content");
 const coming = document.getElementById("coming");
 
-// 1. Full UI Reset Function
-function fullReset() {
+function resetPortal() {
     buttons.forEach(x => x.classList.remove("active"));
     content.classList.add("hidden");
     grid.innerHTML = "";
     coming.classList.add("hidden");
-    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// 2. Trigger Reset on every page entrance (handles Back Button)
+// Reset UI on every visit/back button hit for smooth UX
 window.addEventListener('pageshow', (event) => {
-    fullReset();
+    resetPortal();
 });
 
-// 3. Navigation Logic
 buttons.forEach(b => {
   b.onclick = () => {
-    fullReset(); // Clear state before showing new
+    resetPortal();
     b.classList.add("active");
     content.classList.remove("hidden");
 
@@ -114,7 +116,7 @@ buttons.forEach(b => {
       [6, 7, 8, 9, 10, 11, 12].forEach(cls => {
         grid.innerHTML += `
         <a href="./cbse/class-${cls}/index.html" 
-           class="card flex items-center justify-center font-bold text-lg text-cbse border-2 border-transparent hover:border-cbse"
+           class="card flex items-center justify-center font-bold text-cbse border-2 border-transparent hover:border-cbse"
            onclick="gtag('event','class_opened',{board:'CBSE',class:${cls}})">
           Class ${cls}
         </a>`;
@@ -124,10 +126,10 @@ buttons.forEach(b => {
     if (board === "SCERT") {
       grid.innerHTML = `
       <a href="./scert/telangana-9/index.html" 
-         class="card col-span-2 flex flex-col items-center justify-center border-2 border-cbse"
+         class="card col-span-2 flex flex-col items-center justify-center border-2 border-cbse text-cbse"
          onclick="gtag('event','scert_opened',{state:'Telangana'})">
-        <span class="text-lg font-bold text-cbse">Class 9 Telangana</span>
-        <span class="text-xs uppercase opacity-60">Live Demo</span>
+        <span class="text-lg font-bold">Class 9 Telangana</span>
+        <span class="text-xs uppercase opacity-60">View Demo</span>
       </a>`;
     }
 
