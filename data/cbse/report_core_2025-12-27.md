@@ -1,4 +1,4 @@
-# CBSE CORE SUBJECTS (Excluding Hindi) - 2025-12-27
+# CBSE CORE CONTENT (No Languages) - 2025-12-27
 
 | Class | Subject | Category/Stream | Chapters |
 | :--- | :--- | :--- | :--- |
@@ -12,9 +12,7 @@
 | CLASS-6 | Mathematics | Number System & Arithmetic | 7 |
 | CLASS-6 | Mathematics | Algebra | 2 |
 | CLASS-6 | Mathematics | Geometry & Mensuration | 4 |
-| CLASS-6 | English | Honeycomb (Textbook) | 14 |
-| CLASS-6 | English | An Alien Hand (Supplementary Reader) | 10 |
-| **CLASS-6** | **TOTAL** | --- | **82** |
+| **CLASS-6** | **TOTAL FOR CLASS-6** | **---** | **58** |
 | CLASS-7 | Science | Physics | 4 |
 | CLASS-7 | Science | Chemistry | 3 |
 | CLASS-7 | Science | Biology | 11 |
@@ -25,11 +23,7 @@
 | CLASS-7 | Mathematics | Number System and Arithmetic | 5 |
 | CLASS-7 | Mathematics | Algebra | 2 |
 | CLASS-7 | Mathematics | Geometry and Mensuration | 7 |
-| CLASS-7 | English | Textbook | 10 |
-| CLASS-7 | English | Poetry | 8 |
-| CLASS-7 | English | Supplementary Reader | 8 |
-| CLASS-7 | Sanskrit | Ruchira (रुचिरा) | 15 |
-| **CLASS-7** | **TOTAL** | --- | **106** |
+| **CLASS-7** | **TOTAL FOR CLASS-7** | **---** | **65** |
 | CLASS-8 | Science | Physics | 6 |
 | CLASS-8 | Science | Chemistry | 4 |
 | CLASS-8 | Science | Biology | 6 |
@@ -40,10 +34,7 @@
 | CLASS-8 | Mathematics | Number System and Algebra | 9 |
 | CLASS-8 | Mathematics | Geometry and Visualisation | 1 |
 | CLASS-8 | Mathematics | Mensuration, Data Handling and Graphs | 5 |
-| CLASS-8 | English | Honeydew (Textbook) | 14 |
-| CLASS-8 | English | It So Happened (Supplementary Reader) | 10 |
-| CLASS-8 | Sanskrit | Ruchira - Part III (रुचिरा - तृतीयो भागः) | 15 |
-| **CLASS-8** | **TOTAL** | --- | **93** |
+| **CLASS-8** | **TOTAL FOR CLASS-8** | **---** | **54** |
 | CLASS-9 | Science | Physics | 5 |
 | CLASS-9 | Science | Chemistry | 4 |
 | CLASS-9 | Science | Biology | 6 |
@@ -54,10 +45,7 @@
 | CLASS-9 | Mathematics | Algebra and Number System | 3 |
 | CLASS-9 | Mathematics | Geometry | 7 |
 | CLASS-9 | Mathematics | Mensuration, Statistics and Probability | 5 |
-| CLASS-9 | English | Beehive (Textbook) | 18 |
-| CLASS-9 | English | Moments (Supplementary Reader) | 9 |
-| CLASS-9 | Sanskrit | Shemushi - Part I (शेमुषी - प्रथमो भागः) | 12 |
-| **CLASS-9** | **TOTAL** | --- | **90** |
+| **CLASS-9** | **TOTAL FOR CLASS-9** | **---** | **51** |
 | CLASS-10 | Science | Chemical Substances - Nature and Behaviour (Chemistry) | 5 |
 | CLASS-10 | Science | World of Living (Biology) | 4 |
 | CLASS-10 | Science | Natural Phenomena & Effects of Current (Physics) | 4 |
@@ -69,7 +57,7 @@
 | CLASS-10 | Mathematics | Algebra | 4 |
 | CLASS-10 | Mathematics | Geometry & Trigonometry | 6 |
 | CLASS-10 | Mathematics | Number System & Mensuration/Statistics | 5 |
-| **CLASS-10** | **TOTAL** | --- | **53** |
+| **CLASS-10** | **TOTAL FOR CLASS-10** | **---** | **53** |
 | CLASS-11 | Physics | Physics Part I | 7 |
 | CLASS-11 | Physics | Physics Part II | 8 |
 | CLASS-11 | Chemistry | Chemistry Part I | 6 |
@@ -78,8 +66,6 @@
 | CLASS-11 | Mathematics | Mathematics Part I | 9 |
 | CLASS-11 | Mathematics | Mathematics Part II | 7 |
 | CLASS-11 | Applied Mathematics | Applied Mathematics Textbook for Class XI | 8 |
-| CLASS-11 | English | Hornbill (Textbook) | 10 |
-| CLASS-11 | English | Snapshots (Supplementary Reader) | 7 |
 | CLASS-11 | Accountancy | Financial Accounting Part I | 7 |
 | CLASS-11 | Accountancy | Financial Accounting Part II | 5 |
 | CLASS-11 | Business Studies | Business Studies Part I: Foundations of Business | 6 |
@@ -95,7 +81,7 @@
 | CLASS-11 | Geography | Practical Work in Geography Part I | 8 |
 | CLASS-11 | Sociology | Introducing Sociology | 5 |
 | CLASS-11 | Sociology | Understanding Society | 5 |
-| **CLASS-11** | **TOTAL** | --- | **200** |
+| **CLASS-11** | **TOTAL FOR CLASS-11** | **---** | **183** |
 | CLASS-12 | Physics | Physics Part I | 8 |
 | CLASS-12 | Physics | Physics Part II | 7 |
 | CLASS-12 | Chemistry | Chemistry Part I | 9 |
@@ -103,8 +89,6 @@
 | CLASS-12 | Biology | Biology | 16 |
 | CLASS-12 | Mathematics | Mathematics Part I | 9 |
 | CLASS-12 | Mathematics | Mathematics Part II | 4 |
-| CLASS-12 | English | Flamingo (Textbook) | 13 |
-| CLASS-12 | English | Vistas (Supplementary Reader) | 8 |
 | CLASS-12 | Accountancy | Company Accounts & Partnership Accounting | 6 |
 | CLASS-12 | Accountancy | Company Accounts & Analysis of Financial Statements | 5 |
 | CLASS-12 | Business Studies | Principles & Functions of Management | 8 |
@@ -119,5 +103,5 @@
 | CLASS-12 | Sociology | Social Change & Development | 5 |
 | CLASS-12 | Geography | Fundamentals of Human Geography | 9 |
 | CLASS-12 | Geography | India People & Economy | 9 |
-| **CLASS-12** | **TOTAL** | --- | **187** |
-| | | **GRAND TOTAL** | **811** |
+| **CLASS-12** | **TOTAL FOR CLASS-12** | **---** | **166** |
+| | | **GRAND TOTAL ALL CLASSES** | **630** |

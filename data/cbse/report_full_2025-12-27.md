@@ -1,4 +1,4 @@
-# CBSE FULL CONTENT - 2025-12-27
+# CBSE FULL CONTENT (All Subjects) - 2025-12-27
 
 | Class | Subject | Category/Stream | Chapters |
 | :--- | :--- | :--- | :--- |
@@ -16,7 +16,7 @@
 | CLASS-6 | English | An Alien Hand (Supplementary Reader) | 10 |
 | CLASS-6 | Hindi | वसंत (Vasant) | 17 |
 | CLASS-6 | Hindi | बाल राम कथा (Baal Ram Katha) | 12 |
-| **CLASS-6** | **TOTAL** | --- | **111** |
+| **CLASS-6** | **TOTAL FOR CLASS-6** | **---** | **111** |
 | CLASS-7 | Science | Physics | 4 |
 | CLASS-7 | Science | Chemistry | 3 |
 | CLASS-7 | Science | Biology | 11 |
@@ -33,7 +33,7 @@
 | CLASS-7 | Hindi | Vasant (वसंत) | 19 |
 | CLASS-7 | Hindi | Bal Mahabharat Katha (बाल महाभारत कथा) - Supplementary | 11 |
 | CLASS-7 | Sanskrit | Ruchira (रुचिरा) | 15 |
-| **CLASS-7** | **TOTAL** | --- | **136** |
+| **CLASS-7** | **TOTAL FOR CLASS-7** | **---** | **136** |
 | CLASS-8 | Science | Physics | 6 |
 | CLASS-8 | Science | Chemistry | 4 |
 | CLASS-8 | Science | Biology | 6 |
@@ -50,7 +50,7 @@
 | CLASS-8 | Hindi | Durva - Part III (दुर्वा - भाग ३) | 10 |
 | CLASS-8 | Hindi | Sanshipt Budhcharit (संक्षिप्त बुद्धचरित) | 4 |
 | CLASS-8 | Sanskrit | Ruchira - Part III (रुचिरा - तृतीयो भागः) | 15 |
-| **CLASS-8** | **TOTAL** | --- | **122** |
+| **CLASS-8** | **TOTAL FOR CLASS-8** | **---** | **122** |
 | CLASS-9 | Science | Physics | 5 |
 | CLASS-9 | Science | Chemistry | 4 |
 | CLASS-9 | Science | Biology | 6 |
@@ -66,7 +66,7 @@
 | CLASS-9 | Hindi | Kshitij - Part I (क्षितिज - भाग १) | 17 |
 | CLASS-9 | Hindi | Kritika - Part I (कृतिका - भाग १) | 5 |
 | CLASS-9 | Sanskrit | Shemushi - Part I (शेमुषी - प्रथमो भागः) | 12 |
-| **CLASS-9** | **TOTAL** | --- | **112** |
+| **CLASS-9** | **TOTAL FOR CLASS-9** | **---** | **112** |
 | CLASS-10 | Science | Chemical Substances - Nature and Behaviour (Chemistry) | 5 |
 | CLASS-10 | Science | World of Living (Biology) | 4 |
 | CLASS-10 | Science | Natural Phenomena & Effects of Current (Physics) | 4 |
@@ -78,7 +78,7 @@
 | CLASS-10 | Mathematics | Algebra | 4 |
 | CLASS-10 | Mathematics | Geometry & Trigonometry | 6 |
 | CLASS-10 | Mathematics | Number System & Mensuration/Statistics | 5 |
-| **CLASS-10** | **TOTAL** | --- | **53** |
+| **CLASS-10** | **TOTAL FOR CLASS-10** | **---** | **53** |
 | CLASS-11 | Physics | Physics Part I | 7 |
 | CLASS-11 | Physics | Physics Part II | 8 |
 | CLASS-11 | Chemistry | Chemistry Part I | 6 |
@@ -108,7 +108,7 @@
 | CLASS-11 | Hindi | Aroh (Poetry) | 2 |
 | CLASS-11 | Hindi | Vitan (Supplementary Reader) | 2 |
 | CLASS-11 | Hindi | Antra (Supplementary Reader) | 2 |
-| **CLASS-11** | **TOTAL** | --- | **209** |
+| **CLASS-11** | **TOTAL FOR CLASS-11** | **---** | **209** |
 | CLASS-12 | Physics | Physics Part I | 8 |
 | CLASS-12 | Physics | Physics Part II | 7 |
 | CLASS-12 | Chemistry | Chemistry Part I | 9 |
@@ -132,5 +132,5 @@
 | CLASS-12 | Sociology | Social Change & Development | 5 |
 | CLASS-12 | Geography | Fundamentals of Human Geography | 9 |
 | CLASS-12 | Geography | India People & Economy | 9 |
-| **CLASS-12** | **TOTAL** | --- | **187** |
-| | | **GRAND TOTAL** | **930** |
+| **CLASS-12** | **TOTAL FOR CLASS-12** | **---** | **187** |
+| | | **GRAND TOTAL ALL CLASSES** | **930** |

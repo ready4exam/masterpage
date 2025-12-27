@@ -1,4 +1,4 @@
-# SCERT FULL CONTENT - 2025-12-27
+# SCERT FULL CONTENT (All Subjects) - 2025-12-27
 
 | Class | Subject | Category/Stream | Chapters |
 | :--- | :--- | :--- | :--- |
@@ -9,5 +9,5 @@
 | TELANGANA-9 | Mathematics | Number Systems & Algebra | 4 |
 | TELANGANA-9 | Mathematics | Geometry | 7 |
 | TELANGANA-9 | Mathematics | Mensuration, Statistics & Probability | 5 |
-| **TELANGANA-9** | **TOTAL** | --- | **62** |
-| | | **GRAND TOTAL** | **62** |
+| **TELANGANA-9** | **TOTAL FOR TELANGANA-9** | **---** | **62** |
+| | | **GRAND TOTAL ALL CLASSES** | **62** |
