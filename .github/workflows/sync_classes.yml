@@ -1,38 +1,60 @@
-name: Sync Class Repos to Masterpage
+name: Rebuild and Sync Boards
 on:
-  workflow_dispatch: # This creates the "One Click" button
+  workflow_dispatch: # Manual "One-Click" trigger
 
 jobs:
-  sync:
+  rebuild-and-sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Masterpage
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT_TOKEN }} # You will need to add this secret
+          token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Sync Folders
+      - name: Clean Existing Folders
         run: |
-          # List of your class numbers
+          # Remove old class folders and board folders to start fresh
+          rm -rf class-* rm -rf cbse scert icse other-boards
+          echo "Cleanup complete."
+
+      - name: Create New Directory Structure
+        run: |
+          mkdir -p cbse
+          mkdir -p scert
+          mkdir -p icse
+          mkdir -p other-boards
+
+      - name: Sync CBSE Repos
+        run: |
           CLASSES=("6" "7" "8" "9" "10" "11" "12")
-          
           for cls in "${CLASSES[@]}"; do
-            echo "Processing Class $cls..."
-            # Clone each repo into a temporary space
-            git clone https://github.com/ready4exam/ready4exam-class-$cls.git temp_class_$cls
-            
-            # Create the folder if it doesn't exist
-            mkdir -p class-$cls
-            
-            # Copy contents (excluding .git folder) into the masterpage subfolder
-            cp -r temp_class_$cls/* class-$cls/
-            rm -rf temp_class_$cls
+            echo "Cloning CBSE Class $cls..."
+            git clone https://github.com/ready4exam/ready4exam-class-$cls.git temp_cbse_$cls
+            mkdir -p cbse/class-$cls
+            # Copy contents into the new nested structure
+            cp -r temp_cbse_$cls/* cbse/class-$cls/
+            rm -rf temp_cbse_$cls
           done
 
-      - name: Commit and Push
+      - name: Sync SCERT (Telangana) Repos
+        run: |
+          echo "Cloning Telangana Class 9..."
+          git clone https://github.com/ready4exam/ready4exam-class-9Telangana.git temp_tg_9
+          mkdir -p scert/telangana-9
+          cp -r temp_tg_9/* scert/telangana-9/
+          rm -rf temp_tg_9
+
+      - name: Maintain Placeholders
+        run: |
+          # Ensures empty folders are tracked by Git
+          touch icse/.gitkeep
+          touch other-boards/.gitkeep
+
+      - name: Commit and Push Changes
         run: |
           git config --global user.name "Automation Bot"
           git config --global user.email "bot@github.com"
           git add .
-          git commit -m "Automated sync of all class folders" || echo "No changes to commit"
+          # Using || true to prevent the script from failing if no files changed
+          git commit -m "Full rebuild: Deleted old folders and synced CBSE/SCERT structure" || true
           git push
