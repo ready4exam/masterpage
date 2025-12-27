@@ -1,0 +1,38 @@
+name: Sync Class Repos to Masterpage
+on:
+  workflow_dispatch: # This creates the "One Click" button
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Masterpage
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }} # You will need to add this secret
+
+      - name: Sync Folders
+        run: |
+          # List of your class numbers
+          CLASSES=("6" "7" "8" "9" "10" "11" "12")
+          
+          for cls in "${CLASSES[@]}"; do
+            echo "Processing Class $cls..."
+            # Clone each repo into a temporary space
+            git clone https://github.com/ready4exam/ready4exam-class-$cls.git temp_class_$cls
+            
+            # Create the folder if it doesn't exist
+            mkdir -p class-$cls
+            
+            # Copy contents (excluding .git folder) into the masterpage subfolder
+            cp -r temp_class_$cls/* class-$cls/
+            rm -rf temp_class_$cls
+          done
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Automation Bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "Automated sync of all class folders" || echo "No changes to commit"
+          git push
