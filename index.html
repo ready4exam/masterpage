@@ -10,7 +10,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { anonymize_ip:true });
+  gtag('config', 'G-4EFDM0CRYY', { anonymize_ip:true });
 </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -71,7 +71,9 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:.25s}
 
 <section id="content" class="hidden">
   <div id="grid" class="grid md:grid-cols-3 gap-8"></div>
-  <div id="coming" class="hidden text-center text-xl font-bold mt-10">ICSE — Coming Soon</div>
+  <div id="coming" class="hidden text-center text-xl font-bold mt-10 text-gray-400">
+    ICSE Board — Coming Soon
+  </div>
 </section>
 
 </main>
@@ -93,11 +95,13 @@ const coming=document.getElementById("coming");
 
 buttons.forEach(b=>{
   b.onclick=()=>{
+    // Reset state: remove active from all, hide content sections
     buttons.forEach(x=>x.classList.remove("active"));
     b.classList.add("active");
-    content.classList.remove("hidden");
+    
     grid.innerHTML="";
-    coming.classList.add("hidden");
+    content.classList.remove("hidden"); // Show the container
+    coming.classList.add("hidden");    // Hide "coming soon" by default
 
     const board=b.dataset.board;
     gtag('event','board_selected',{board});
@@ -119,6 +123,7 @@ buttons.forEach(b=>{
     }
 
     if(board==="ICSE"){
+      // Show ONLY the coming soon text
       coming.classList.remove("hidden");
     }
   };
