@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>Ready4Exam — Board-Aligned Academic Portal</title>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -51,12 +50,8 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:.25s}
 <main class="max-w-6xl mx-auto p-6">
 
 <section class="bg-gradient-to-br from-slate-900 via-blue-900 to-green-600 text-white rounded-3xl p-10 text-center mb-14">
-  <h1 class="text-4xl font-black mb-4">
-    Board-Aligned Assessment & Mastery Platform (Classes 6–12)
-  </h1>
-  <p class="opacity-90">
-    Identify gaps early. Practice smart. Grow stronger — chapter by chapter.
-  </p>
+  <h1 class="text-4xl font-black mb-4">Board-Aligned Assessment & Mastery Platform</h1>
+  <p class="opacity-90">Identify gaps early. Practice smart. Grow stronger — chapter by chapter.</p>
 </section>
 
 <section class="grid md:grid-cols-3 gap-6 mb-16 text-center">
@@ -76,9 +71,7 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:.25s}
 
 <section id="content" class="hidden">
   <div id="grid" class="grid md:grid-cols-3 gap-8"></div>
-  <div id="coming" class="hidden text-center text-xl font-bold mt-10">
-    ICSE — Coming Soon
-  </div>
+  <div id="coming" class="hidden text-center text-xl font-bold mt-10">ICSE — Coming Soon</div>
 </section>
 
 </main>
@@ -88,16 +81,11 @@ box-shadow:0 6px 18px rgba(0,0,0,.05);transition:.25s}
 </footer>
 
 <script>
-/* ---------- TIME ON PAGE ---------- */
 const start=Date.now();
 window.addEventListener("beforeunload",()=>{
-  gtag('event','time_on_page',{
-    page:'master',
-    seconds:Math.round((Date.now()-start)/1000)
-  });
+  gtag('event','time_on_page',{page:'master',seconds:Math.round((Date.now()-start)/1000)});
 });
 
-/* ---------- BOARD / CLASS / CHAPTER ---------- */
 const buttons=document.querySelectorAll(".btn");
 const grid=document.getElementById("grid");
 const content=document.getElementById("content");
@@ -117,20 +105,15 @@ buttons.forEach(b=>{
     if(board==="CBSE"){
       [6,7,8,9,10,11,12].forEach(cls=>{
         grid.innerHTML+=`
-        <a href="./class-${cls}/index.html"
-           class="card"
-           onclick="gtag('event','class_opened',{board:'CBSE',class:${cls}})">
+        <a href="./cbse/class-${cls}/index.html" class="card" onclick="gtag('event','class_opened',{board:'CBSE',class:${cls}})">
           Class ${cls}
         </a>`;
       });
     }
 
     if(board==="SCERT"){
-      // Mapped to the specific folder name created by your automation
       grid.innerHTML=`
-      <a href="./class-9/index.html"
-         class="card"
-         onclick="gtag('event','scert_demo_opened',{conversion:true})">
+      <a href="./scert/telangana-9/index.html" class="card" onclick="gtag('event','scert_opened',{state:'Telangana'})">
         Class 9 Telangana (Demo)
       </a>`;
     }
@@ -141,6 +124,5 @@ buttons.forEach(b=>{
   };
 });
 </script>
-
 </body>
 </html>
