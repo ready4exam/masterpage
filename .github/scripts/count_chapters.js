@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// 1. Find all curriculum.js files in the repo
 const getFiles = (dir, fileList = []) => {
   const files = fs.readdirSync(dir);
   files.forEach(file => {
@@ -24,66 +23,81 @@ const results = { cbse: [], scert: [], icse: [], other: [] };
 curriculumFiles.forEach(filePath => {
   try {
     const content = fs.readFileSync(filePath, 'utf8');
-    // Regex to grab the object regardless of export style
     const match = content.match(/curriculum\s*=\s*(\{[\s\S]*\});/);
     if (!match) return;
 
-    // Use a Function constructor for safer evaluation of the JS object
     const curriculum = new Function(`return ${match[1]}`)();
-    
-    // Path analysis based on your structure: cbse/class-10/js/curriculum.js
     const pathParts = filePath.split(path.sep);
-    const board = pathParts[0].toLowerCase(); // e.g., cbse
-    const className = pathParts[1].toUpperCase(); // e.g., CLASS-10
+    const board = pathParts[0].toLowerCase();
+    const className = pathParts[1].toUpperCase();
     const targetBoard = results[board] ? board : 'other';
 
+    let classGrandTotal = 0;
+
     Object.keys(curriculum).forEach(subject => {
-      let totalChapters = 0;
       const subjectsData = curriculum[subject];
       
       Object.keys(subjectsData).forEach(bookOrStream => {
-        if (Array.isArray(subjectsData[bookOrStream])) {
-          totalChapters += subjectsData[bookOrStream].length;
+        const count = subjectsData[bookOrStream].length;
+        classGrandTotal += count;
+
+        // Logic to name the stream/book clearly
+        let categoryName = bookOrStream;
+        if (className.includes("11") || className.includes("12")) {
+            if (bookOrStream.toLowerCase().includes("science")) categoryName = "Science Stream";
+            else if (bookOrStream.toLowerCase().includes("commerce")) categoryName = "Commerce Stream";
+            else if (bookOrStream.toLowerCase().includes("humanities") || bookOrStream.toLowerCase().includes("arts")) categoryName = "Humanities Stream";
         }
-      });
-      
-      results[targetBoard].push({ 
-        "Class": className, 
-        "Subject": subject, 
-        "Chapters": totalChapters 
+
+        results[targetBoard].push({ 
+          "Class": className, 
+          "Subject": subject, 
+          "Category": categoryName,
+          "Count": count,
+          "Type": "row"
+        });
       });
     });
-  } catch (e) {
-    console.error(`Error processing ${filePath}: ${e.message}`);
-  }
+
+    // Add Subtotal for the Class
+    results[targetBoard].push({ 
+      "Class": className, 
+      "Subject": "TOTAL FOR " + className, 
+      "Category": "---", 
+      "Count": classGrandTotal,
+      "Type": "subtotal" 
+    });
+
+  } catch (e) { console.error(`Error: ${e.message}`); }
 });
 
-// 2. Generate segregated Table outputs
 Object.keys(results).forEach(board => {
   if (results[board].length === 0) return;
 
   const dir = path.join('data', board);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-  // Markdown Table
+  let boardGrandTotal = 0;
   let mdTable = `# ${board.toUpperCase()} Content Report - ${timestamp}\n\n`;
-  mdTable += `| Class | Subject | Chapter Count |\n| :--- | :--- | :--- |\n`;
+  mdTable += `| Class | Subject | Category/Stream | Chapters |\n| :--- | :--- | :--- | :--- |\n`;
   
-  // Sort by Class name for better readability
-  results[board].sort((a, b) => a.Class.localeCompare(b.Class));
+  let csv = `Class,Subject,Category,Chapters\n`;
+
+  // Sort by Class
+  results[board].sort((a, b) => a.Class.localeCompare(b.Class, undefined, {numeric: true}));
 
   results[board].forEach(row => {
-    mdTable += `| ${row.Class} | ${row.Subject} | ${row.Chapters} |\n`;
+    const bold = row.Type === "subtotal" ? "**" : "";
+    mdTable += `| ${bold}${row.Class}${bold} | ${bold}${row.Subject}${bold} | ${row.Category} | ${bold}${row.Count}${bold} |\n`;
+    csv += `${row.Class},${row.Subject},${row.Category},${row.Count}\n`;
+    
+    if (row.Type === "subtotal") boardGrandTotal += row.Count;
   });
 
-  // CSV File
-  let csv = `Class,Subject,Chapters\n`;
-  results[board].forEach(row => {
-    csv += `${row.Class},${row.Subject},${row.Chapters}\n`;
-  });
+  // Final Grand Total for the Board
+  mdTable += `| | | **GRAND TOTAL ALL CLASSES** | **${boardGrandTotal}** |\n`;
+  csv += `,,,TOTAL:${boardGrandTotal}\n`;
 
   fs.writeFileSync(path.join(dir, `report_${timestamp}.md`), mdTable);
   fs.writeFileSync(path.join(dir, `data_${timestamp}.csv`), csv);
 });
-
-console.log("Tabular data generated in /data folder.");
